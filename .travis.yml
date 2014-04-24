@@ -6,6 +6,7 @@ before_script:
 	- npm install -g grunt-cli
 	- npm install -g mocha
 	- npm install
+	- grunt linting
 
 script:
-	- grunt linting  && npm test
+	- npm test
