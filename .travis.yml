@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-	- "0.10"
+  - "0.10"
 
 before_script:
-	- npm install -g grunt-cli
-	- npm install -g mocha
-	- npm install
-	- grunt linting
+  - npm install -g grunt-cli
+  - npm install -g mocha
+  - npm install
+  - grunt linting
 
 script:
-	- npm test
+  - npm test
