@@ -1,0 +1,30 @@
+{
+	"curly": true, // Require {} for every new block or scope.
+	"eqeqeq": true, // Require triple equals ===
+	"immed": true,  // Require immediate invocations to be wrapped in parens e.g. ( function(){}() );
+	"latedef": true, // Prohibit variable use before definition.
+	"newcap": true, // Require constructor name capitalization
+	"noarg": true, // Prohibit use of arguments.caller and arguments.callee
+	"sub": true, // Tolerate all forms of subscript notation besides dot notation e.g. dict["key"] instead of dict.key
+	"undef": true, // Require all non-global variables be declared before they are used.
+	"unused": true, // Require defined variables to be used
+	"boss": true, // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
+	"eqnull": true, // Tolerate use of == null
+	"browser": true, // Standard browser globals e.g. window, document
+	"node": true, // Node specific globals
+	"devel" : true, // Allow development statements e.g. console.log()
+	"node" : true, // Globals for Node runtime
+	"globals": {
+		"define": false,
+		"describe": false,
+		"describePrefix": false,
+		"expect": false,
+		"it": false,
+		"xit":false,
+		"jasmine": false,
+		"beforeEach": false,
+		"afterEach": false,
+		"spyOn": false,
+		"runs" : false
+	}
+}

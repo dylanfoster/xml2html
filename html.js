@@ -10,9 +10,9 @@ exports.save = function(report, folder, callback){
 	var extractedData = ''; 						
 	var testsuites = [];							
 	var module = report.replace(/\.[^/.]+$/, "");	
-	module = path.basename(module);					
-	//console.log(module);
-
+	var moduleName = path.basename(module);					
+	//console.log(moduleName);
+	exports.moduleName = moduleName;
 
 	fs.readFile(tmpl, function (err, data) {
     if (err) {
@@ -62,13 +62,15 @@ exports.save = function(report, folder, callback){
 				}
 			});
 
-			var filename = path.join(folder, module +'.html');
-			fs.writeFile(filename, rendered, callback)
+			var filename = path.join(folder, moduleName +'.html');
+			fs.writeFileSync(filename, rendered, callback)
 			
 		});
 	});
 });
+
 };
+
 
 
 

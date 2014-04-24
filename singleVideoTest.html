@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+	<head>
+		<style type='text/css'>
+			ul.totals{
+			width: 80%;
+			padding: 20px;
+			margin: 0 auto;
+			border: 2px solid #49e;
+			background: #ccc;
+			min-height: 50px;
+			}			
+			ul.totals li {
+			float: left;
+			width: calc(100%/5);
+			list-style: none;
+			padding: 0;
+			position: relative;
+			text-align: center;
+			font-family: fantasy;
+			font-size: 24px;
+			font-weight: bold;
+			}
+			li.totalTests{
+			color:  blue;
+			}
+			li.totalPass{
+			color: green;
+			}
+			li.totalErrors{
+			color:	yellow;
+			}
+			li.totalFailures{
+			color:	red;
+			}
+			li.totalSkipped{
+			color:	purple;
+			}
+			ul.totals li ul {
+			margin: 0 auto;
+			position: absolute;
+			left: 50%;
+			margin-left: -10px;
+			text-align: center;
+			padding: 0;
+			width: 20px;
+			}
+			ul.testSuites{
+			width: 80%;
+			margin: 0 auto;
+			margin-top: 10px;
+			border: 1px solid;
+			box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.6);
+			padding: 20px;
+			}
+			ul.testSuites li{
+				list-style: none;
+				font-size: 24px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- start totals section and module name -->
+		<h1>./singleVideoTest</h1>
+		<!--this needs to be inline list-->
+		<ul class='totals'>
+			<li class='totalTests'>Tests
+				<ul>
+					<li> 48</li>
+				</ul>
+			</li>
+			<li class='totalPass'>Pass
+				<ul>
+					<li> 47</li>
+				</ul>
+			</li>
+			<li class='totalErrors'>Errors
+				<ul>
+					<li> 0</li>
+				</ul>
+			</li>
+			<li class='totalFailures'>Failures
+				<ul>
+					<li> 1</li>
+				</ul>
+			</li>
+			<li class='totalSkipped'>Skipped
+				<ul>
+					<li> 2</li>
+				</ul>
+			</li>
+		</ul>
+		<!-- end totals section and module name -->
+		<ul class='testSuites'>
+		
+		
+
+			<li>Load the page
+				<ul class='results'>
+					<li>Total: 2 
+						<ul class='testcases'>
+							
+							<li> Element &lt;body&gt; was visible after 45 milliseconds. </li>
+							
+							<li> function (){
+        this.assert.not.ok(&#39;.ac-video-wrapper&#39;);
+      } </li>
+							
+						</ul
+					</li>
+					<li>Pass: 2</li>
+					<li>Fail: 0
+						<ul class='failedMessages'>
+						
+						
+						
+						
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 0</li>
+				</ul>
+			</li>
+
+
+			
+
+			<li>Testing the video profile
+				<ul class='results'>
+					<li>Total: 6 
+						<ul class='testcases'>
+							
+							<li> Element &lt;body&gt; was visible after 34 milliseconds. </li>
+							
+							<li> Element &lt;#ac-video-0-wrapper&gt; was visible after 22 milliseconds. </li>
+							
+							<li> Assertion failed: chrome supports H264 </li>
+							
+							<li> Assertion passed: chrome does not support HLS </li>
+							
+							<li> Assertion passed: chrome has but does not use Quicktime </li>
+							
+							<li> Assertion passed: chrome supports HTML5 Video </li>
+							
+						</ul
+					</li>
+					<li>Pass: 5</li>
+					<li>Fail: 1
+						<ul class='failedMessages'>
+						
+						
+						
+						
+						
+						
+						
+							<li> Expected &quot;false&quot; but got: &quot;true&quot;</li>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 0</li>
+				</ul>
+			</li>
+
+
+			
+
+			<li>Click to Play
+				<ul class='results'>
+					<li>Total: 2 
+						<ul class='testcases'>
+							
+							<li> Element &lt;body&gt; was visible after 33 milliseconds. </li>
+							
+							<li> Poster Frame Loaded </li>
+							
+						</ul
+					</li>
+					<li>Pass: 2</li>
+					<li>Fail: 0
+						<ul class='failedMessages'>
+						
+						
+						
+						
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 0</li>
+				</ul>
+			</li>
+
+
+			
+
+			<li>Check Paused
+				<ul class='results'>
+					<li>Total: 5 
+						<ul class='testcases'>
+							
+							<li> Element &lt;body&gt; was visible after 36 milliseconds. </li>
+							
+							<li> Element &lt;.ac-video-wrapper&gt; was visible after 23 milliseconds. </li>
+							
+							<li> Assertion passed: false </li>
+							
+							<li> Assertion passed: true </li>
+							
+							<li> Assertion passed: true </li>
+							
+						</ul
+					</li>
+					<li>Pass: 5</li>
+					<li>Fail: 0
+						<ul class='failedMessages'>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 0</li>
+				</ul>
+			</li>
+
+
+			
+
+			<li>Playing the video
+				<ul class='results'>
+					<li>Total: 5 
+						<ul class='testcases'>
+							
+							<li> Element &lt;body&gt; was visible after 54 milliseconds. </li>
+							
+							<li> Element &lt;.ac-video-wrapper&gt; was visible after 24 milliseconds. </li>
+							
+							<li> Assertion passed: false </li>
+							
+							<li> Assertion passed: false </li>
+							
+							<li> Assertion passed: false </li>
+							
+						</ul
+					</li>
+					<li>Pass: 5</li>
+					<li>Fail: 0
+						<ul class='failedMessages'>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 0</li>
+				</ul>
+			</li>
+
+
+			
+
+			<li>Checking the timestamps
+				<ul class='results'>
+					<li>Total: 4 
+						<ul class='testcases'>
+							
+							<li> Element &lt;body&gt; was visible after 35 milliseconds. </li>
+							
+							<li> Element &lt;#ac-video-0-wrapper&gt; was visible after 22 milliseconds. </li>
+							
+							<li> Assertion passed: 21 </li>
+							
+							<li> Assertion passed: 36 </li>
+							
+						</ul
+					</li>
+					<li>Pass: 4</li>
+					<li>Fail: 0
+						<ul class='failedMessages'>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 0</li>
+				</ul>
+			</li>
+
+
+			
+
+			<li>Checking volume controls
+				<ul class='results'>
+					<li>Total: 16 
+						<ul class='testcases'>
+							
+							<li> Element &lt;body&gt; was visible after 24 milliseconds. </li>
+							
+							<li> Assertion passed: 1 </li>
+							
+							<li> Max Volume button is active: Checking if sound is muted(should not be)..... </li>
+							
+							<li> Assertion passed: false </li>
+							
+							<li> Assertion passed: 0 </li>
+							
+							<li> Min Volume button is active: Checking if sound is muted(should not be)..... </li>
+							
+							<li> Assertion passed: false </li>
+							
+							<li> Assertion passed: 1 </li>
+							
+							<li> Max Volume button is active: Checking if sound is muted(should not be)..... </li>
+							
+							<li> Assertion passed: false </li>
+							
+							<li> Assertion passed: 1 </li>
+							
+							<li> Mute button is active: Checking if sound is muted(should be)..... </li>
+							
+							<li> Assertion passed: true </li>
+							
+							<li> Assertion passed: 1 </li>
+							
+							<li> Max Volume button is active: Checking if sound is muted(should not be)..... </li>
+							
+							<li> Assertion passed: false </li>
+							
+						</ul
+					</li>
+					<li>Pass: 16</li>
+					<li>Fail: 0
+						<ul class='failedMessages'>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 0</li>
+				</ul>
+			</li>
+
+
+			
+
+			<li>Checking Captions
+				<ul class='results'>
+					<li>Total: 6 
+						<ul class='testcases'>
+							
+							<li> Element &lt;body&gt; was visible after 22 milliseconds. </li>
+							
+							<li> Element &lt;#ac-video-0-wrapper&gt; was visible after 29 milliseconds. </li>
+							
+							<li> Assertion passed: hasCaptions is a boolean </li>
+							
+							<li> Assertion passed: captionsTrack is a string </li>
+							
+							<li> Assertion passed: caption is showing </li>
+							
+							<li> Assertion passed: caption is hidden </li>
+							
+						</ul
+					</li>
+					<li>Pass: 6</li>
+					<li>Fail: 0
+						<ul class='failedMessages'>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 0</li>
+				</ul>
+			</li>
+
+
+			
+
+			<li>HTML Report
+				<ul class='results'>
+					<li>Total: 2 
+						<ul class='testcases'>
+							
+						</ul
+					</li>
+					<li>Pass: 0</li>
+					<li>Fail: 0
+						<ul class='failedMessages'>
+						
+
+						</ul>
+					</li>
+					<li>Errors: 0</li>
+					<li>Skipped: 2</li>
+				</ul>
+			</li>
+
+
+			
+		</ul>
+
+	</body>
+</html>
