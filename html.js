@@ -5,12 +5,12 @@ var fs = require('fs'),
 	ejs = require('ejs');
 
 exports.save = function(report, folder, callback){
-	var tmpl = __dirname + '/report.html.ejs'; 		//ejs template to read from
-	var parser = new xml2js.Parser(); 				//xml parser to read report.xml
-	var extractedData = ''; 						//resets any already parsed data (for reusability)
-	var testsuites = [];							//testsuites array
-	var module = report.replace(/\.[^/.]+$/, "");	//testsuite name/filepath
-	module = path.basename(module);					//testsuite name(w/o filepath, used to name the report)
+	var tmpl = __dirname + '/report.html.ejs';
+	var parser = new xml2js.Parser(); 				
+	var extractedData = ''; 						
+	var testsuites = [];							
+	var module = report.replace(/\.[^/.]+$/, "");	
+	module = path.basename(module);					
 	//console.log(module);
 
 
@@ -23,16 +23,13 @@ exports.save = function(report, folder, callback){
 	fs.readFile(report, function(err, data){
 		parser.parseString(data, function(err, result){
 
-			/**
-			  * Let's declare some variables
-			 */
 
-			extractedData = result['testsuites'];			//the xml data as JSON object, gives us all of the test suites
-		var	testsuites = extractedData.testsuite,			//each testsuite
-			totalTests = extractedData.$['tests'],			//total number of tests across all testsuites
+			extractedData = result['testsuites'];
+		var	testsuites = extractedData.testsuite,
+			totalTests = extractedData.$['tests'],
 			//console.log(totalTests);
-			totalFailures = extractedData.$['failures'],	//total failures
-			totalErrors = extractedData.$['errors'];		//total errors
+			totalFailures = extractedData.$['failures'],
+			totalErrors = extractedData.$['errors'];
 			var totalSkipped = 0;
 			var v;
 			for(var i=0; i < testsuites.length; i++){
@@ -46,15 +43,7 @@ exports.save = function(report, folder, callback){
 					failedCase		= testsuites[i].testcase,
 					v 				= parseFloat(skipped),
 					totalPass		= totalTests - totalSkipped - totalFailures;
-					totalSkipped	+= v;
-					
-					
-						
-							//for(var j in testsuites[i].testcase[x].failure)
-							//console.log(testsuites[i].testcase[x].failure[j].$['message']);
-						
-						
-					
+					totalSkipped	+= v;		
 
 			}
 			var rendered = ejs.render(tmpl, {
@@ -74,27 +63,12 @@ exports.save = function(report, folder, callback){
 			});
 
 			var filename = path.join(folder, module +'.html');
-			fs.writeFile(filename, rendered, callback);
-
-			//console.log(testsuites[0].$['errors']);
+			fs.writeFile(filename, rendered, callback)
 			
 		});
 	});
 });
 };
-
-
-/**
-  * We need:
-  * Test Module name (ie: singleVideoTests, twoVideoTests, etc) - done
-  * Total number of tests 										- done
-  * Total number of pass/fail 									- 
-  * #Skipped 													- 
-  * What failed (test name and why)								- 
-  * screenshot of failure                                       - 
-  * List of tests with pass/fail/no of tests etc 				- 
-  * 
- */
 
 
 
