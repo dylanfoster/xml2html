@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+	<head>
+		<style type='text/css'>
+			ul.totals{
+			width: 80%;
+			padding: 20px;
+			margin: 0 auto;
+			border: 2px solid #49e;
+			background: #ccc;
+			min-height: 50px;
+			}			
+			ul.totals li {
+			float: left;
+			width: calc(100%/5);
+			list-style: none;
+			padding: 0;
+			position: relative;
+			text-align: center;
+			font-family: fantasy;
+			font-size: 24px;
+			font-weight: bold;
+			}
+			li.totalTests{
+			color:  blue;
+			}
+			li.totalPass{
+			color: green;
+			}
+			li.totalErrors{
+			color:	yellow;
+			}
+			li.totalFailures{
+			color:	red;
+			}
+			li.totalSkipped{
+			color:	purple;
+			}
+			ul.totals li ul {
+			margin: 0 auto;
+			position: absolute;
+			left: 50%;
+			margin-left: -10px;
+			text-align: center;
+			padding: 0;
+			width: 20px;
+			}
+			ul.testSuites{
+			width: 80%;
+			margin: 0 auto;
+			margin-top: 10px;
+			border: 1px solid;
+			box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.6);
+			padding: 20px;
+			}
+			ul.testSuites li{
+				list-style: none;
+				font-size: 24px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- start totals section and module name -->
+		<h1><%= module %></h1>
+		<!--this needs to be inline list-->
+		<ul class='totals'>
+			<li class='totalTests'>Tests
+				<ul>
+					<li> <%= totalTests %></li>
+				</ul>
+			</li>
+			<li class='totalPass'>Pass
+				<ul>
+					<li> <%= totalPass %></li>
+				</ul>
+			</li>
+			<li class='totalErrors'>Errors
+				<ul>
+					<li> <%= totalErrors %></li>
+				</ul>
+			</li>
+			<li class='totalFailures'>Failures
+				<ul>
+					<li> <%= totalFailures %></li>
+				</ul>
+			</li>
+			<li class='totalSkipped'>Skipped
+				<ul>
+					<li> <%= totalSkipped %></li>
+				</ul>
+			</li>
+		</ul>
+		<!-- end totals section and module name -->
+		<ul class='testSuites'>
+		
+		<% for (var i=0; i < testsuites.length; i++){ %>
+
+			<li><%= testsuites[i].$['name'] %>
+				<ul class='results'>
+					<li>Total: <%= testsuites[i].$['tests'] %> 
+						<ul class='testcases'>
+							<% for(var x in testsuites[i].testcase){ %>
+							<li> <%= testsuites[i].testcase[x].$['name'] %> </li>
+							<% } %>
+						</ul
+					</li>
+					<li>Pass: <%= testsuites[i].$['tests'] - testsuites[i].$['failures'] - testsuites[i].$['skipped'] %></li>
+					<li>Fail: <%= testsuites[i].$['failures'] %>
+						<ul class='failedMessages'>
+						<% for(var x in testsuites[i].testcase){ %>
+						<%	if(testsuites[i].testcase[x].failure){ %>
+						<%	for(var j in testsuites[i].testcase[x].failure){ %>
+							<li> <%= testsuites[i].testcase[x].failure[j].$['message'] %></li>
+						<%	} %>
+						<%	} %>
+						<%  } %>
+
+						</ul>
+					</li>
+					<li>Errors: <%= testsuites[i].$['errors'] %></li>
+					<li>Skipped: <%= testsuites[i].$['skipped'] %></li>
+				</ul>
+			</li>
+
+
+			<% } %>
+		</ul>
+
+	</body>
+</html>

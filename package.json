@@ -1,0 +1,33 @@
+{
+  "name": "xml2html",
+  "version": "0.0.0",
+  "description": "Utility to convert Junit xml to html report",
+  "main": "html.js",
+  "scripts": {
+    "test": "grunt karma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dylan947/xml2html"
+  },
+  "keywords": [
+    "xml",
+    "html",
+    "junit",
+    "xml",
+    "coverter",
+    "xml",
+    "to",
+    "html"
+  ],
+  "author": "Dylan foster",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dylan947/xml2html/issues"
+  },
+  "homepage": "https://github.com/dylan947/xml2html",
+  "devDependencies": {
+    "ejs": "^1.0.0",
+    "xml2js": "^0.4.2"
+  }
+}
