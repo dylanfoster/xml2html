@@ -4,7 +4,7 @@
   "description": "Utility to convert Junit xml to html report",
   "main": "html.js",
   "scripts": {
-    "test": "grunt karma"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
