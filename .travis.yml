@@ -7,5 +7,5 @@ before_script:
 	- npm install -g mocha
 	- npm install
 
-script
+script:
 	- grunt linting  && npm test
