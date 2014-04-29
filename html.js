@@ -8,11 +8,15 @@ exports.save = function(report, folder, callback){
 	var tmpl = __dirname + '/report.html.ejs';
 	var parser = new xml2js.Parser(); 				
 	var extractedData = ''; 						
-	var testsuites = [];							
-	var module = report.replace(/\.[^/.]+$/, "");	
-	var moduleName = path.basename(module);					
+	var testsuites = [];
+	var module = report.replace(/\.[^/.]+$/, "");
+	var module = path.basename(module);
+	console.log(module);
+
+	//var module = report.replace(/\.[^/.]+$/, "");	
+	//var moduleName = path.basename(module);					
 	//console.log(moduleName);
-	exports.moduleName = moduleName;
+	//exports.moduleName = moduleName;
 
 	fs.readFile(tmpl, function (err, data) {
     if (err) {
@@ -62,7 +66,7 @@ exports.save = function(report, folder, callback){
 				}
 			});
 
-			var filename = path.join(folder, moduleName +'.html');
+			var filename = path.join(folder, module +'.html');
 			fs.writeFileSync(filename, rendered, callback)
 			
 		});

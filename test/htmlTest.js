@@ -10,14 +10,11 @@ var chai 	 = require('chai'),
 			expect(reporter.save).to.be.an('function');
 		});
 
-		save = new reporter.save('./singleVideoTest.xml', './');
+		var save = new reporter.save('./singleVideoTest.xml', './');
 		
 		describe('when called as a constructor', function(){
 			it('should return an object', function(){
-				
-			});
-			it('can be called', function(){
-				
+				expect(save).to.be.an('object');
 			});
 
 		});

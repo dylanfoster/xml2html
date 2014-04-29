@@ -1,9 +1,8 @@
 'use strict';
-var reporter = require('./html.js');
+var reporter = require('./html.js').save;
 module.exports = {
-	"report" : function(){
-		reporter('./singleVideoTest.xml', './');
-		console.log('done');
-		//done();
-	}	
+	"save the file" : function(){
+		return reporter('./singleVideoTest.xml', './');
+
+	}
 };
